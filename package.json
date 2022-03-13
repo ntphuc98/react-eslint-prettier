@@ -2,6 +2,15 @@
   "name": "react-eslint-prettier",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "*.{css,scss,yml,json,md,html}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
@@ -61,6 +70,7 @@
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.7",
+    "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1"
   }

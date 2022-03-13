@@ -179,6 +179,44 @@ public/
 tsconfig.json
 ```
 
+### Setup `lint-staged`
+
+- Step 1: Install
+
+```
+npm install --save-dev lint-staged
+```
+
+or
+
+```
+yarn add --dev lint-staged
+```
+
+- Step 2: Add script to `package.json`
+
+```
+  "lint-staged": {
+    "*.{css,scss,yml,json,md,html}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+```
+
+### Setup Husky
+
+https://typicode.github.io/husky/#/
+
+- Step 1: Install
+
+```
+npm install husky --save-dev
+```
+
 ### Extensions
 
 Prettier - Code formatter - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
