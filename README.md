@@ -217,6 +217,63 @@ https://typicode.github.io/husky/#/
 npm install husky --save-dev
 ```
 
+or
+
+```
+yarn add husky --dev
+```
+
+- Step 2: Enable Git Hooks
+
+```
+npx husky install
+```
+
+or
+
+```
+yarn husky install
+```
+
+- Step 3: Add script to `package.json`
+
+```
+npm set-script prepare "husky install"
+```
+
+```
+// package.json
+{
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
+```
+
+or
+
+```
+// package.json
+{
+  "private": true, // ← your package is private, you only need postinstall
+  "scripts": {
+    "postinstall": "husky install"
+  }
+}
+```
+
+- Step 4: Create a hook
+
+```
+npx husky add .husky/pre-commit "npm lint-staged" & git add .husky/pre-commit
+```
+
+or
+
+```
+yarn husky add .husky/pre-commit "yarn lint-staged" & git add .husky/pre-commit
+```
+
 ### Extensions
 
 Prettier - Code formatter - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
